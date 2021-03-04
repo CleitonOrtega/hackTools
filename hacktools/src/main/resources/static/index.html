@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="controllerQuestionario.js"></script>
+	
+    <title>HackTools!</title>
+  </head>
+  <body>
+
+    <div class="container d-flex justify-content-end mt-4 mb-3">
+    <a href="resposta.html">
+        <button class="btn btn-dark" type="button">Responder Questionarios!</button></a>
+    </div>
+    
+    <div class="container d-flex justify-content-end mb-4">
+    <a href="mostrarQuestionario.html">
+        <button class="btn btn-dark" type="button">Ver Questionarios!</button></a>
+    </div>
+
+    <div class="container w-50 mt-5 mb-5">
+        <div class="mt-4 " ng-app="myApp" ng-controller="myCtrl">
+            <form>
+                <div class="mb-3 ">
+                  <label for="titulo" class="form-label">Titulo</label>
+                  <input type="text" class="form-control" id="titulo" ng-model="titulo" aria-describedby="emailHelp">
+                </div>
+		<div class="mb-3">
+                  <label for="primeiraPergunta" class="form-label">Primeira Pergunta</label>
+                  <input type="text" class="form-control" id="primeiraPergunta" ng-model="primeiraPergunta">
+                </div>
+		<div class="mb-3">
+                  <label for="segundaPergunta" class="form-label">Segunda Pergunta</label>
+                  <input type="text" class="form-control" id="segundaPergunta" ng-model="segundaPergunta">
+                </div>
+                <div class="mb-3">
+                  <label for="usuario" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" ng-model="usuario">
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <button class="btn btn-dark w-50" ng-click="salvar()">Enviar!</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>
