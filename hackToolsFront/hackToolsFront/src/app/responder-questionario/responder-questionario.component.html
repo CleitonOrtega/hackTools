@@ -1,0 +1,17 @@
+<div class="container content w-100 mt-5 mb-5 " >
+    <div class="card w-100 mb-4 " style="width: 18rem;" *ngFor="let item of listaQuestionario">
+        <div class="card-body row d-flex justify-content-center">
+            <h5 class="card-title col-md-12 d-flex justify-content-center">Usuario: {{item.usuario}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted col-md-12 d-flex justify-content-center">Titulo: {{item.titulo}}</h6>
+            <h6 class="card-subtitle text-muted col-md-12 d-flex justify-content-center">Primeira Pergunta: {{item.primeiraPergunta}}</h6>
+            <textarea type="text" class="form-control mt-4 mb-2 col-md-8 " id="campo1" [(ngModel)]="Resposta.primeiraResposta" [ngModelOptions]="{standalone: true}"></textarea>
+            <h6 class="card-subtitle mb-4 mt-2 text-muted col-md-12 d-flex justify-content-center">Segunda Pergunta: {{item.segundaPergunta}}</h6>
+            <textarea type="text" class="form-control col-md-8 " id="campo2" [(ngModel)]="Resposta.segundaResposta" [ngModelOptions]="{standalone: true}" ></textarea>
+
+            <div class="d-flex justify-content-center mt-3 col-md-6">
+                <button class="btn btn-dark w-50" (click)='salvar(item.idQuestionario)'>Enviar Resposta!</button>
+            </div>
+
+        </div>
+    </div>
+</div>

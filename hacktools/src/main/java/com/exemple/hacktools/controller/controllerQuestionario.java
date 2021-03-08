@@ -31,10 +31,17 @@ public class controllerQuestionario {
 	@Autowired
 	private repositoryQuestionario repository;
 	
-	//Metodo para consultar os dados no banco de dados endereço( http://localhost:8080/questionario )
+	//Metodo para consultar os dados no banco de dados endereço( http://localhost:8080/questionario/buscarTodos )
 	@GetMapping("/buscarTodos")
 	public List<modelQuestionario> buscarTodos(){
 		return repository.findAll();
+	}
+	
+	//Metodo para consultar um dado em especifico
+	@GetMapping("/id.{id}")
+	public ResponseEntity<modelQuestionario>getById(@PathVariable Long id){
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	//Metodo para criar um novo questionario

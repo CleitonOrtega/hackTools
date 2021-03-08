@@ -1,0 +1,55 @@
+<div class="container w-100 mt-5 mb-5 ">
+    <div class="card w-100 mb-4" style="width: 18rem;" *ngFor="let item of listaQuestionario">
+        <div class="card-body">
+            <h4 class="card-title d-flex justify-content-center">Usuario: {{item.usuario}}</h4>
+            <h5 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Titulo: {{item.titulo}} </h5>
+            <h5 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Primeira Pergunta:
+                {{item.primeiraPergunta}}</h5>
+            <h5 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Segunda Pergunta:
+                {{item.segundaPergunta}}</h5>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-dark w-50 mt-2 " data-toggle="modal" data-target="#modalAlterar"
+                    data-whatever="@mdo" (click)="identificarId(item.idQuestionario)" >
+                    Ver Respostas deste questionario</button>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAlterar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" data-aos="zoom-in">
+        <div class="modal-content  text-dark" data-aos="zoom-in">
+            <div class="modal-header" data-aos="zoom-in">
+                <h5 class="modal-title" id="exampleModalLabel" data-aos="zoom-in">Respostas do questionario
+                </h5>
+                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+
+                <div class="card text-dark bg-light mb-3 w-100" *ngFor="let item of listaResposta">
+                    <div class="card-header">Titulo: {{Questionario.titulo}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">1º Pergunta: {{Questionario.primeiraPergunta}}</h5>
+                        <p class="card-text">Resposta da 1º pergunta: {{item.primeiraResposta}}</p>
+
+                        <h5 class="card-title">2º Pergunta: {{Questionario.segundaPergunta}}</h5>
+                        <p class="card-text">Resposta da 2º pergunta: {{item.segundaResposta}}</p>
+                    </div>
+                </div>
+                <div class="card text-dark bg-light mb-3 w-100" *ngIf='teste'>
+                    <div class="card-body">
+                        <h5 class="card-title">Sem respostas registradas</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark w-100" data-dismiss="modal" >Fechar Questionario</button>
+            </div>
+        </div>
+    </div>
+</div>
